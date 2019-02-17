@@ -28,19 +28,19 @@ class Task():
 
     def get_reward(self):
         """Uses current pose of sim to return reward."""
-        # reward = 1.-.3*(abs(self.sim.pose[:2] - self.target_pos)).sum()        # the best score = - 9.239, initial reward calculation given in lesson example
-        # reward = 1.-.1*(abs(self.sim.pose[:2] - self.target_pos)).sum()        # the best score = 1.912, no noticeable reward improvement w.r.t. time step
-        # reward = 1.-.1*(abs(self.sim.pose[:2] - self.target_pos)).sum()        # the best score = 1.992, no noticeable reward improvement w.r.t. time step 
-        # reward = 1.-.5*(abs(self.sim.pose[:2] - self.target_pos)).sum()        # the best score = -16.621, became worse w.r.t. time step
-        # reward = 1.-.05*(abs(self.sim.pose[:2] - self.target_pos)).sum()       # the best score = 2.495, no noticeable reward improvement w.r.t. time step
-        # reward = 1.-.005*(abs(self.sim.pose[:2] - self.target_pos)).sum()      # the best score = 2.950, no noticeable reward improvement w.r.t. time step
-        # reward = 1.-.0005*(abs(self.sim.pose[:2] - self.target_pos)).sum()     # the best score = 2.980, no noticeable reward improvement w.r.t. time step
-        # reward = min(abs(self.sim.pose[:2] - self.target_pos))                 # the best score = 15.335, noticeable reward improvement w.r.t. time step
+        # reward = 1.-.3*(abs(self.sim.pose[:3] - self.target_pos)).sum()        # the best score = - 9.239, initial reward calculation given in lesson example
+        # reward = 1.-.1*(abs(self.sim.pose[:3] - self.target_pos)).sum()        # the best score = 1.912, no noticeable reward improvement w.r.t. time step
+        # reward = 1.-.1*(abs(self.sim.pose[:3] - self.target_pos)).sum()        # the best score = 1.992, no noticeable reward improvement w.r.t. time step 
+        # reward = 1.-.5*(abs(self.sim.pose[:3] - self.target_pos)).sum()        # the best score = -16.621, became worse w.r.t. time step
+        # reward = 1.-.05*(abs(self.sim.pose[:3] - self.target_pos)).sum()       # the best score = 2.495, no noticeable reward improvement w.r.t. time step
+        # reward = 1.-.005*(abs(self.sim.pose[:3] - self.target_pos)).sum()      # the best score = 2.950, no noticeable reward improvement w.r.t. time step
+        # reward = 1.-.0005*(abs(self.sim.pose[:3] - self.target_pos)).sum()     # the best score = 2.980, no noticeable reward improvement w.r.t. time step
+        # reward = min(abs(self.sim.pose[:3] - self.target_pos))                 # the best score = 15.335, noticeable reward improvement w.r.t. time step
           
-        #reward = min(abs(self.sim.pose[:2] - self.target_pos)).sum()            # the best score = 31.625
-        reward = min(abs(self.sim.pose[:2] - self.target_pos)).sum().mean()      # the best score = 26.541
-        #reward = np.mean(min(abs(self.sim.pose[:2] - self.target_pos)).sum())   # the best score = 18.471
-        #reward = np.mean(min(abs(self.sim.pose[:2] - self.target_pos)))         # the best score = 19.368
+        #reward = min(abs(self.sim.pose[:3] - self.target_pos)).sum()            # the best score = 31.635
+        reward = min(abs(self.sim.pose[:3] - self.target_pos)).sum().mean()      # the best score = 26.541
+        #reward = np.mean(min(abs(self.sim.pose[:3] - self.target_pos)).sum())   # the best score = 18.471
+        #reward = np.mean(min(abs(self.sim.pose[:3] - self.target_pos)))         # the best score = 19.368
 
         return reward
 
